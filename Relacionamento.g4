@@ -3,7 +3,7 @@ grammar Relacionamento;
 /*regras sintáticas*/
 relacionamento : line+ EOF;
 line : pessoa ',' message;
-message : (relacao pessoa caracteristica? ',')+;
+message : (relacao pessoa caracteristica? ','?)+;
 pessoa : LETRAS;
 
 dia : NUMBER;

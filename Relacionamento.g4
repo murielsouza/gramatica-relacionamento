@@ -2,8 +2,8 @@ grammar Relacionamento;
 
 /*regras sintáticas*/
 relacionamento : line+ EOF;
-line : pessoa ',' message;
-message : (relacao pessoa caracteristica? ','?)+;
+line : pessoa ',' relacao;
+relacao : (tiposRelacao pessoa caracteristica? ','?)+;
 pessoa : LETRAS;
 
 dia : NUMBER;
@@ -11,7 +11,7 @@ mes : NUMBER;
 ano : NUMBER;
 data : dia '/' mes '/' ano;
 tempo : 'dia' 's'? | 'mes' 'es'? | 'ano' 's'? ;
-relacao : 'casado' '(a)'? 'com' | 'pai de' | 'mãe de' | 'irma' '(o)'? 'de' | 'amigo' '(a)'? 'de' | 'filho de';
+tiposRelacao : 'casado' '(a)'? 'com' | 'pai de' | 'mãe de' | 'irma' '(o)'? 'de' | 'amigo' '(a)'? 'de' | 'filho de';
 caracteristica : 'em' data | 'ha' NUMBER tempo;
 
 
